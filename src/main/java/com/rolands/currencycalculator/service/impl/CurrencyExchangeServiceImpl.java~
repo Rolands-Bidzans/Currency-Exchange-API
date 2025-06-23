@@ -115,7 +115,7 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
     }
 
     /*  Created: Rolands Bidzans
-        Description: Function that validates currency
+        Description: Function that checks if currency exists
     */
     private void validateCurrency(String currency){
         try {

@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Schema(description = "DTO representing a currency conversion rate between two currencies")
-public class CurrencyConversionResponseDto {
+public class CurrencyExchangeRateDto{
     @Schema(description = "Source currency code (e.g., 'USD')", example = "USD")
     private String from;
 
@@ -20,5 +20,7 @@ public class CurrencyConversionResponseDto {
 
     @Schema(description = "Exchange rate of the source currency", example = "1.0")
     private BigDecimal exchangeFrom;
+
+    @Schema(description = "Exchange rate of the target currency", example = "0.92")
     private BigDecimal exchangeTo;
 }

@@ -1,6 +1,6 @@
 package com.rolands.currencycalculator.controller;
 
-import com.rolands.currencycalculator.dto.CurrencyConversionResponseDto;
+import com.rolands.currencycalculator.dto.CurrencyExchangeRateDto;
 import com.rolands.currencycalculator.dto.ErrorResponseDto;
 import com.rolands.currencycalculator.service.CurrencyExchangeService;
 import com.rolands.currencycalculator.utility.CurrencyCode;
@@ -45,7 +45,7 @@ public class CurrencyExchangeController {
                             description = "Successful response with exchange rate data",
                             content = @Content(
                                     mediaType = "application/json",
-                                    array = @ArraySchema(schema = @Schema(implementation = CurrencyConversionResponseDto.class))
+                                    array = @ArraySchema(schema = @Schema(implementation = CurrencyExchangeRateDto.class))
                             )
                     ),
                     @ApiResponse(
@@ -65,7 +65,7 @@ public class CurrencyExchangeController {
             }
     )
     @GetMapping("/exchange-rate")
-    public CurrencyConversionResponseDto getExchangeRate(@RequestParam String from,
+    public CurrencyExchangeRateDto getExchangeRate(@RequestParam String from,
                                                  @RequestParam String to,
                                                  @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return service.fetchEcbXmlRates(from, to, date);

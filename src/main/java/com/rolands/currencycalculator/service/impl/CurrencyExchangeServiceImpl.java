@@ -1,6 +1,6 @@
 package com.rolands.currencycalculator.service.impl;
 
-import com.rolands.currencycalculator.dto.CurrencyConversionResponseDto;
+import com.rolands.currencycalculator.dto.CurrencyExchangeRateDto;
 import com.rolands.currencycalculator.service.CurrencyExchangeService;
 import com.rolands.currencycalculator.utility.CurrencyCode;
 import lombok.extern.log4j.Log4j2;
@@ -33,7 +33,7 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
     }
 
     @Override
-    public CurrencyConversionResponseDto fetchEcbXmlRates(String from, String to, LocalDate date) {
+    public CurrencyExchangeRateDto fetchEcbXmlRates(String from, String to, LocalDate date) {
 
         // Format currencies in upper case
         from = from.toUpperCase();
@@ -57,7 +57,7 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
             }
         }
 
-        CurrencyConversionResponseDto currencyConversionResponseDto = new CurrencyConversionResponseDto();
+        CurrencyExchangeRateDto currencyConversionResponseDto = new CurrencyExchangeRateDto();
         currencyConversionResponseDto.setFrom(from);
         currencyConversionResponseDto.setTo(to);
         currencyConversionResponseDto.setExchangeTo(exchangeRateMap.get(to));
