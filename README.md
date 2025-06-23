@@ -28,3 +28,8 @@ git clone https://github.com/Rolands-Bidzans/Currency-Exchange-API.git
 cd Currency-Exchange-API
 mvn clean package
 java -jar target/currencycalculator-0.0.1-SNAPSHOT.jar
+```
+
+## API Testing with Postman
+You can import the included Postman collection: *Currency Exchange API.postman_collection.json*
+into Postman to quickly test all API endpoints and their requests.
