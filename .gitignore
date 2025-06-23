@@ -1,0 +1,18 @@
+# Build artifacts
+target/
+
+# IntelliJ project files
+.idea/
+*.iml
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
+
+# Logs (optional but common)
+*.log
+
+# OS-generated files (optional)
+.DS_Store
+Thumbs.db
